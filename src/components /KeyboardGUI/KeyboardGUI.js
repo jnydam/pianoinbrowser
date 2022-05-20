@@ -12,7 +12,6 @@ const KeyboardGUI = (props) => {
         <div className={styles.whiteKeyElement}></div>
         <div className={styles.whiteKeyElement}></div>
         <div className={styles.whiteKeyElement}></div>
-        
     </div>)
 }
 
