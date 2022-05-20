@@ -1,4 +1,5 @@
 import React from 'react';
+import KeyboardGUI from '../KeyboardGUI/KeyboardGUI';
 
 import styles from './MainLayoutComp.module.css';
 
@@ -9,7 +10,7 @@ const MainLayoutComp = (props) => {
 
         </div>
         <div class={styles.mainKeyboardContainer}>
-
+            <KeyboardGUI></KeyboardGUI>
         </div>
     </div>)
 }
