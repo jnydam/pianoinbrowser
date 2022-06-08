@@ -4,4 +4,5 @@
     position: absolute;
     /* background-color: red; */
     height: 70%;
+    pointer-events: none;
 }

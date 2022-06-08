@@ -4,8 +4,9 @@ import styles from './BlackKeyElementComp.module.css';
 
 const BlackKeyElementComp = (props) => {
 
-    return (<div className={styles.blackKeyElementCompContainer}>
-        <span>This is the black key element comp</span>
+    return (<div 
+        onClick={() => props.onBlackKeyPress(props.keyId)}
+        className={styles.blackKeyElementCompContainer}>
     </div>)
 }
 

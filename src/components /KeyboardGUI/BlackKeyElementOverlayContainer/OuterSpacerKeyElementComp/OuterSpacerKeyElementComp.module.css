@@ -3,4 +3,5 @@
     flex: 3;
     height: 100%;
     /* background-color: beige; */
+    pointer-events: none;
 }
