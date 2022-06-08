@@ -73,18 +73,26 @@ const BlackKeyElementOverlayContainer = (props) => {
         <OuterSpacerKeyElementComp></OuterSpacerKeyElementComp>
 
         <BlackKeyElementComp
-            ></BlackKeyElementComp>
+            keyId={7}
+            onBlackKeyPress={handleBlackKeyPress}></BlackKeyElementComp>
 
         <InnerSpacerKeyElementComp></InnerSpacerKeyElementComp>
 
-        <BlackKeyElementComp></BlackKeyElementComp>
+        <BlackKeyElementComp
+            keyId={8}
+            onBlackKeyPress={handleBlackKeyPress}></BlackKeyElementComp>
 
         <InnerSpacerKeyElementComp></InnerSpacerKeyElementComp>
 
-        <BlackKeyElementComp></BlackKeyElementComp>
+        <BlackKeyElementComp
+            keyId={9}
+            onBlackKeyPress={handleBlackKeyPress}></BlackKeyElementComp>
         <OuterSpacerKeyElementComp></OuterSpacerKeyElementComp>
         <OuterSpacerKeyElementComp></OuterSpacerKeyElementComp>
-        <BlackKeyElementComp></BlackKeyElementComp>
+
+        <BlackKeyElementComp
+            keyId={10}
+            onBlackKeyPress={handleBlackKeyPress}></BlackKeyElementComp>
         <InnerSpacerKeyElementComp></InnerSpacerKeyElementComp>
 
         <EndingSpacerKeyElementComp></EndingSpacerKeyElementComp>
