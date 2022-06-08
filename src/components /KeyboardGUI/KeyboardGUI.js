@@ -5,6 +5,7 @@ import styles from './KeyboardGUI.module.css';
 import * as Tone from 'tone';
 
 import { whiteKeyIndexSoundMapping } from '../../util/SoundIndexMappings';
+import BlackKeyElementOverlayContainer from './BlackKeyElementOverlayContainer/BlackKeyElementOverlayContainer';
 
 
 const KeyboardGUI = (props) => {
@@ -30,6 +31,7 @@ const KeyboardGUI = (props) => {
                 key={index}
                 className={styles.whiteKeyElement}></div>
         ))}
+        <BlackKeyElementOverlayContainer></BlackKeyElementOverlayContainer>
     </div>)
 }
 

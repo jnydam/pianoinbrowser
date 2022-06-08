@@ -1,0 +1,7 @@
+.blackKeyElementOverlayContainerStyle {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    background-color: red;
+    height: 80%;
+}
