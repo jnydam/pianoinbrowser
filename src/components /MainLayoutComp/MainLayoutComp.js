@@ -5,11 +5,11 @@ import styles from './MainLayoutComp.module.css';
 
 const MainLayoutComp = (props) => {
 
-    return (<div class={styles.mainLayoutCompContainer}>
-        <div class={styles.outerControlBarHeaderContainer}>
+    return (<div className={styles.mainLayoutCompContainer}>
+        <div className={styles.outerControlBarHeaderContainer}>
 
         </div>
-        <div class={styles.mainKeyboardContainer}>
+        <div className={styles.mainKeyboardContainer}>
             <KeyboardGUI></KeyboardGUI>
         </div>
     </div>)
