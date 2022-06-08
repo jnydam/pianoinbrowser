@@ -1,0 +1,6 @@
+.OuterSpacerKeyElementCompContainer {
+    display: flex;
+    flex: 3;
+    height: 100%;
+    /* background-color: beige; */
+}

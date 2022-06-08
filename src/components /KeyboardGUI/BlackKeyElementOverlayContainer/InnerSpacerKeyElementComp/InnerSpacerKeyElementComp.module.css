@@ -1,0 +1,6 @@
+.innerSpacerKeyElementContainer {
+    display: flex;
+    flex: 2;
+    height: 100%;
+    /* background-color: beige; */
+}
