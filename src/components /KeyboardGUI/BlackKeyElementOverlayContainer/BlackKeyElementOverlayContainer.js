@@ -15,11 +15,8 @@ const BlackKeyElementOverlayContainer = (props) => {
 
     const handleBlackKeyPress = (keyId) => {
 
-        console.log("You just pressed the black key");
-        console.log(keyId);
 
         const synth = new Tone.Synth().toDestination();
-        const now = Tone.now();
 
         synth.triggerAttackRelease(blackKeyIndexSoundMapping[keyId], "8n", Tone.context.currentTime);
     }

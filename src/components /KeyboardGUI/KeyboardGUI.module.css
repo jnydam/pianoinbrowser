@@ -1,7 +1,6 @@
 
 .keyboardGuiContainerComp {
     display: flex;
-    background-color: red;
     height: 100%;
     width: 100%;
     position: relative;
@@ -19,7 +18,6 @@
     display: flex;
     background-color: black;
     height: 30rem;
-    /* flex: 2; */
     flex: 2;
     position: absolute;
 }

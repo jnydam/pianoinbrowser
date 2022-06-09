@@ -14,11 +14,7 @@ const KeyboardGUI = (props) => {
 
     const handleWhiteKeyPress = (event, whiteKeyNum) => {
 
-        console.log("You are pressing on a keyboard");
-        console.log(whiteKeyNum);
-
         const synth = new Tone.Synth().toDestination();
-        const now = Tone.now();
 
         synth.triggerAttackRelease(whiteKeyIndexSoundMapping[whiteKeyNum], "8n", Tone.context.currentTime);
 
