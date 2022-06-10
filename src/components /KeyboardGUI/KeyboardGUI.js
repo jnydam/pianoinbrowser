@@ -16,7 +16,19 @@ const KeyboardGUI = (props) => {
 
         const synth = new Tone.Synth().toDestination();
 
-        synth.triggerAttackRelease(whiteKeyIndexSoundMapping[whiteKeyNum], "8n", Tone.context.currentTime);
+        synth.envelope.attack = 0.4;
+        synth.envelope.decay = 0.5;
+        synth.envelope.sustain = 0.5;
+        synth.envelope.release = 0.8;
+        
+        // new Tone.Envelope({
+        //     attack: 0.1,
+        //     decay: 0.2,
+        //     sustain: 0.5,
+        //     release: 0.8,
+        // });
+        
+        synth.triggerAttackRelease(whiteKeyIndexSoundMapping[whiteKeyNum], "16n", Tone.context.currentTime);
 
     }
 
