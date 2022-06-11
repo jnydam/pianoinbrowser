@@ -26,12 +26,15 @@ const MainLayoutComp = (props) => {
                 setCNoteSelected(false);
             }
 
+
         }, 1);
         
 
         const synth = new Tone.Synth().toDestination();
         const now = Tone.now();
         clock.start(now);
+        clock.stop('+13');
+
 
         synth.envelope.attack = 0.4;
         synth.envelope.decay = 0.5;
@@ -45,23 +48,32 @@ const MainLayoutComp = (props) => {
         synth.triggerAttackRelease("C4", 0.06, now + 0.375 * tempoFactor);
         synth.triggerAttackRelease("D4", 0.125, now + 0.5 * tempoFactor);
         synth.triggerAttackRelease("C4", 0.125, now + 1 * tempoFactor);
-        synth.triggerAttackRelease("F4", "16n", now + 1.5 * tempoFactor);
-        synth.triggerAttackRelease("E4", "16n", now + 2 * tempoFactor);
+        synth.triggerAttackRelease("F4", 0.125, now + 1.5 * tempoFactor);
+        synth.triggerAttackRelease("E4", 0.125, now + 2 * tempoFactor);
 
-        synth.triggerAttackRelease("C4", "16n", now + 3 * tempoFactor);
-        synth.triggerAttackRelease("C4", "16n", now + 3.375 * tempoFactor);
-        synth.triggerAttackRelease("D4", "16n", now + 3.5 * tempoFactor);
-        synth.triggerAttackRelease("C4", "16n", now + 4.0 * tempoFactor);
-        synth.triggerAttackRelease("G4", "16n", now + 4.5 * tempoFactor);
-        synth.triggerAttackRelease("F4", "16n", now + 5.0 * tempoFactor);
+        synth.triggerAttackRelease("C4", 0.125, now + 3 * tempoFactor);
+        synth.triggerAttackRelease("C4", 0.06, now + 3.375 * tempoFactor);
+        synth.triggerAttackRelease("D4", 0.125, now + 3.5 * tempoFactor);
+        synth.triggerAttackRelease("C4", 0.125, now + 4.0 * tempoFactor);
+        synth.triggerAttackRelease("G4", 0.125, now + 4.5 * tempoFactor);
+        synth.triggerAttackRelease("F4", 0.125, now + 5.0 * tempoFactor);
 
-        synth.triggerAttackRelease("C4", "16n", now + 6 * tempoFactor);
-        synth.triggerAttackRelease("C4", "16n", now + 6.375 * tempoFactor);
-        synth.triggerAttackRelease("C5", "16n", now + 6.5 * tempoFactor);
-        synth.triggerAttackRelease("A4", "16n", now + 7 * tempoFactor);
-        synth.triggerAttackRelease("F4", "16n", now + 7.5 * tempoFactor);
-        synth.triggerAttackRelease("E4", "16n", now + 8 * tempoFactor);
-        synth.triggerAttackRelease("D4", "16n", now + 8.5 * tempoFactor);
+        synth.triggerAttackRelease("C4", 0.125, now + 6 * tempoFactor);
+        synth.triggerAttackRelease("C4", 0.06, now + 6.375 * tempoFactor);
+        synth.triggerAttackRelease("C5", 0.125, now + 6.5 * tempoFactor);
+        synth.triggerAttackRelease("A4", 0.125, now + 7 * tempoFactor);
+        synth.triggerAttackRelease("F4", 0.125, now + 7.5 * tempoFactor);
+        synth.triggerAttackRelease("E4", 0.125, now + 8 * tempoFactor);
+        synth.triggerAttackRelease("D4", 0.125, now + 8.5 * tempoFactor);
+
+        synth.triggerAttackRelease("Bb4", 0.125, now + 9.5 * tempoFactor);
+        synth.triggerAttackRelease("Bb4", 0.06, now + 9.875 * tempoFactor);
+        synth.triggerAttackRelease("A4", 0.125, now + 10.0 * tempoFactor);
+        synth.triggerAttackRelease("F4", 0.125, now + 10.5 * tempoFactor);
+        synth.triggerAttackRelease("G4", 0.125, now + 11.0 * tempoFactor);
+        synth.triggerAttackRelease("F4", 0.125, now + 11.5 * tempoFactor);
+
+
 
 
         console.log("We are playing a song here");
