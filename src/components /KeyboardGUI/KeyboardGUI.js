@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styles from './KeyboardGUI.module.css';
 
@@ -9,6 +9,9 @@ import BlackKeyElementOverlayContainer from './BlackKeyElementOverlayContainer/B
 
 
 const KeyboardGUI = (props) => {
+
+
+
 
     const whiteKeyArrayCount = [...Array(16).keys()];
 
@@ -21,23 +24,38 @@ const KeyboardGUI = (props) => {
         synth.envelope.sustain = 0.5;
         synth.envelope.release = 0.8;
         
-        // new Tone.Envelope({
-        //     attack: 0.1,
-        //     decay: 0.2,
-        //     sustain: 0.5,
-        //     release: 0.8,
-        // });
-        
         synth.triggerAttackRelease(whiteKeyIndexSoundMapping[whiteKeyNum], "16n", Tone.context.currentTime);
 
     }
+
+    const whiteKeyElementNormalStyle = {
+            display: 'flex',
+            backgroundColor: 'white',
+            height: '100%',
+            flex: 2,
+            borderRight: '1px solid black'
+    };
+
+    const whiteKeyElementPressedStyle = {
+        display: 'flex',
+        backgroundColor: '#f3f3f3',
+        height: '100%',
+        flex: 2,
+        borderRight: '1px solid black'
+    };
+
+    console.log("This is the note selected");
+    console.log(props.noteSelected);
 
     return (<div className={styles.keyboardGuiContainerComp}>
         {whiteKeyArrayCount.map((whiteKeyNum, index) => (
             <div
                 onClick={(event) => handleWhiteKeyPress(event, whiteKeyNum)} 
                 key={index}
-                className={styles.whiteKeyElement}></div>
+                // className={styles.whiteKeyElement}
+                style={
+                    props.noteSelected !== undefined 
+                    && whiteKeyIndexSoundMapping[whiteKeyNum] === props.noteSelected ? whiteKeyElementPressedStyle : whiteKeyElementNormalStyle}></div>
         ))}
         <BlackKeyElementOverlayContainer></BlackKeyElementOverlayContainer>
     </div>)

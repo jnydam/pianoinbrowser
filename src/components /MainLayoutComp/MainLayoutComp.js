@@ -3,37 +3,47 @@ import KeyboardGUI from '../KeyboardGUI/KeyboardGUI';
 
 import styles from './MainLayoutComp.module.css';
 
+import { happyBirthdaySongData } from '../../util/songsmappings/HappyBirthdaySong';
+
 import * as Tone from 'tone';
 
 const MainLayoutComp = (props) => {
 
-    const [ cNoteSelected, setCNoteSelected ] = useState(false);
+    const [ songNoteSelected, setSongNoteSelected ] = useState(undefined);
 
 
     const handlePlaySong = () => {
 
         const tempoFactor = 1;
 
-        const clock = new Tone.Clock((time) => {
-
-            console.log("clock tick");
-            console.log(time);
-
-            if (time === 0.1) {
-                console.log("Start note!");
-                setCNoteSelected(true);
-            } else {
-                setCNoteSelected(false);
-            }
-
-
-        }, 1);
-        
 
         const synth = new Tone.Synth().toDestination();
         const now = Tone.now();
+
+        const clock = new Tone.Clock((time) => {
+
+            const noteValue = happyBirthdaySongData[time - now];
+
+            if (noteValue !== undefined) {
+                console.log(noteValue);
+
+                setSongNoteSelected(noteValue);
+            }
+
+            if (time === now + 14) {
+
+                setSongNoteSelected(undefined);
+            }
+
+        }, 8);
+        
+
         clock.start(now);
-        clock.stop('+13');
+        clock.stop('+15');
+
+        console.log("Beginning time");
+        console.log(now);
+        console.log("Ending tiem");
 
 
         synth.envelope.attack = 0.4;
@@ -74,18 +84,15 @@ const MainLayoutComp = (props) => {
         synth.triggerAttackRelease("F4", 0.125, now + 11.5 * tempoFactor);
 
 
-
-
-        console.log("We are playing a song here");
     } 
 
     return (<div className={styles.mainLayoutCompContainer}>
         <div className={styles.outerControlBarHeaderContainer}>
             <button onClick={handlePlaySong}>Play song</button>
-            {cNoteSelected ? <span style={{backgroundColor: 'red'}}>hmmm</span> : null}
         </div>
         <div className={styles.mainKeyboardContainer}>
-            <KeyboardGUI></KeyboardGUI>
+            <KeyboardGUI
+                noteSelected={songNoteSelected}></KeyboardGUI>
         </div>
     </div>)
 }
